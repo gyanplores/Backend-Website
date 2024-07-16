@@ -1,12 +1,9 @@
 import "dotenv/config";
 import { dirname } from "path";
 import { fileURLToPath } from 'url';
-
 import express from 'express';
 import exphbs from 'express-handlebars';
-
 import indexRouter from "./src/routes/indexRouter.js";
-
 import { connectToMongo } from "./src/models/conn.js";
 
 async function main() {
@@ -26,6 +23,8 @@ async function main() {
     app.use(indexRouter);
 
     try {
+        await connectToMongo();
+        console.log("Connected to MongoDB");
         app.listen(process.env.SERVER_PORT, () => {
             console.log("Express app now listening...");
         });

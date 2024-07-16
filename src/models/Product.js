@@ -19,3 +19,5 @@ const productSchema = new Schema({
     }
 
 });
+
+export default Product;

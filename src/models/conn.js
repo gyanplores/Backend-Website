@@ -1,4 +1,4 @@
-import { SchemaTypes, Schema, model } from 'mongoose';
+import mongoose from 'mongoose';
 
 const mongoURI = process.env.MONGODB_URI;
 

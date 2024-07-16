@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import accountsRouter from './accountsRouter.js';
 
 const indexRouter = Router();
 
@@ -31,5 +32,19 @@ indexRouter.get('/products', (req,res) => {
         title: "Products Page"
     });
 })
+
+indexRouter.get('/signup', (req,res)=>{
+    res.render("proto-signup", {
+        title: "Signup Page"
+    });
+})
+
+indexRouter.get('/login', (req,res)=>{
+    res.render("proto-login", {
+        title: "Login Page"
+    });
+})
+
+indexRouter.use(accountsRouter);
 
 export default indexRouter;
